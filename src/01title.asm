@@ -187,10 +187,12 @@ title_wait_vBlank:
     sta $4014
 
     lda v_push_start
-    cmp #$00
-    beq title_loop_draw1
-    cmp #$20
-    beq title_loop_draw2
+    jmp title_loop_draw1
+    ; PUSH STARTが常に表示されるように変更
+    ;cmp #$00
+    ;beq title_loop_draw1
+    ;cmp #$20
+    ;beq title_loop_draw2
     jmp title_loop
 
 title_loop_draw1:

@@ -31,7 +31,8 @@ setup_clear_ram:
     bne setup_clear_ram
 
     ; GET READYタイマーを設定
-    lda #$80
+    ;lda #$80
+    lda #$3 ;GET READYを3フレームに変更
     sta v_ready_timer
 
     ; プレイヤの座標初期化
